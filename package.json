@@ -1,0 +1,12 @@
+{
+  "name": "node-website",
+  "version": "1.0.0",
+  "description": "assigment 2 task 2 for ssp",
+  "license": "ISC",
+  "author": "tom",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
