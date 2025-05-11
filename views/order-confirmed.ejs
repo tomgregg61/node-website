@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order Confirmed</title>
+  </head>
+  <body>
+    <h2>Order Confirmed!</h2>
+    <p>Thank you for your purchase.</p>
+    <p>Order ID: <%= order._id %></p>
+    <p>Date: <%= order.date %></p>
+    <p>Total: £<%= order.total %></p>
+    <a href="/orders/my-orders">View My Orders</a>
+  </body>
+</html>

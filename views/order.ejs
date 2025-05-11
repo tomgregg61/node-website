@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place Your Order</title>
+  </head>
+  <body>
+    <h2>Place Your Order</h2>
+    <form action="/orders/new-order" method="POST">
+      <label for="orderDate">Select a Date:</label>
+      <input type="date" id="orderDate" name="orderDate" required />
+      <p>Ticket Price: £20</p>
+      <input type="hidden" name="total" value="20" />
+      <button type="submit">Place Order</button>
+    </form>
+  </body>
+</html>

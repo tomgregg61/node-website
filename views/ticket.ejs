@@ -1,0 +1,87 @@
+<h1>Ticket Management</h1>
+
+<!-- Order a New Ticket -->
+<form action="/tickets/order" method="POST">
+  <h2>Order a Ticket</h2>
+  <label for="date">Select Date:</label>
+  <input type="date" name="date" required />
+  <p>Base Cost: £20</p>
+  <input type="hidden" name="baseCost" value="20" />
+  <button type="submit">Order Ticket</button>
+</form>
+
+<hr />
+
+<!-- Add Fast-Track Rides -->
+<form action="/tickets/add-fast-track" method="POST">
+  <h2>Add Fast-Track Rides</h2>
+  <label for="ride">Select Ride:</label>
+  <select name="ride">
+    <% rides.forEach(ride => { %>
+    <option value="<%= ride.name %>">
+      <%= ride.name %> (£<%= ride.cost %>)
+    </option>
+    <% }) %>
+  </select>
+  <button type="submit">Add Ride</button>
+</form>
+
+<hr />
+
+<!-- View Ticket Total -->
+<div>
+  <h2>Current Ticket Total</h2>
+  <p>Total: £<%= total %></p>
+</div>
+
+<hr />
+
+<!-- Confirm and Buy Ticket -->
+<form action="/tickets/buy" method="POST">
+  <h2>Buy Ticket</h2>
+  <p>Confirm your ticket before purchase:</p>
+  <ul>
+    <% currentTicket.rides.forEach(ride => { %>
+    <li><%= ride.name %> (£<%= ride.cost %>)</li>
+    <% }) %>
+  </ul>
+  <p>Total: £<%= total %></p>
+  <button type="submit">Buy Ticket</button>
+</form>
+
+<hr />
+
+<!-- View Future Tickets -->
+<h2>Your Future Tickets</h2>
+<ul>
+  <% futureTickets.forEach(ticket => { %>
+  <li>Date: <%= ticket.date %>, Total: £<%= ticket.total %></li>
+  <ul>
+    <% ticket.rides.forEach(ride => { %>
+    <li><%= ride.name %> (£<%= ride.cost %>)</li>
+    <% }) %>
+  </ul>
+  <% }) %>
+</ul>
+
+<hr />
+
+<!-- View Past Tickets -->
+<h2>Your Past Tickets</h2>
+<ul>
+  <% pastTickets.forEach(ticket => { %>
+  <li>Date: <%= ticket.date %>, Total: £<%= ticket.total %></li>
+  <ul>
+    <% ticket.rides.forEach(ride => { %>
+    <li><%= ride.name %> (£<%= ride.cost %>)</li>
+    <% }) %>
+  </ul>
+  <% }) %>
+</ul>
+
+<hr />
+
+<!-- Logout -->
+<form action="/logout" method="POST">
+  <button type="submit">Logout</button>
+</form>

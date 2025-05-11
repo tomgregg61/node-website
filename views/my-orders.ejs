@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Orders</title>
+  </head>
+  <body>
+    <h2>My Orders</h2>
+    <% if (orders.length > 0) { %>
+    <ul>
+      <% orders.forEach(order => { %>
+      <li>
+        Order ID: <%= order._id %> - Date: <%= order.date %> - Total: £<%=
+        order.total %>
+        <a href="/orders/<%= order._id %>">View</a>
+      </li>
+      <% }) %>
+    </ul>
+    <% } else { %>
+    <p>You have no orders.</p>
+    <% } %>
+    <a href="/orders/new-order">Place a new order</a>
+  </body>
+</html>

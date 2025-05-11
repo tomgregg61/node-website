@@ -1,0 +1,18 @@
+<form action="/tokens/buy-tokens" method="post">
+  <section class="product-list">
+    <% for (let i = 0; i < rides.length; i++) { %>
+    <section>
+      <label for="<%= rides[i].name %>">
+        <h3><%= rides[i].name %></h3>
+        <p>
+          <% for (let j = 0; j < rides[i].tags.length; j++) { %>
+          <span class="product-tags"><%= rides[i].tags[j] %></span>
+          <% } %>
+        </p>
+      </label>
+      <input type="checkbox" name="<%= rides[i].name %>" id="id[]" />
+    </section>
+    <% } %>
+  </section>
+  <input class="product-submit" type="submit" value="Get Tokens" />
+</form>

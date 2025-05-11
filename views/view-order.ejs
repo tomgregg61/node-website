@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View Order</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .order-details {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 8px;
+        max-width: 400px;
+      }
+      h2 {
+        color: #333;
+      }
+      p {
+        margin: 5px 0;
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Order Details</h2>
+    <div class="order-details">
+      <p><strong>Order ID:</strong> <%= order._id %></p>
+      <p><strong>Date:</strong> <%= order.date %></p>
+      <p><strong>Total:</strong> £<%= order.total %></p>
+      <p><strong>Buyer ID:</strong> <%= order.buyer %></p>
+    </div>
+    <a href="/orders/my-orders">Back to My Orders</a>
+  </body>
+</html>
