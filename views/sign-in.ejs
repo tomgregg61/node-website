@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-In</title>
+  </head>
+  <body>
+    <section class="signup-section signup-user-section">
+      <h3 id="error" class="error-comment"></h3>
+      <form id="user-form" class="signup-user-form">
+        <fieldset class="signup-user-form-area">
+          <label for="email">Email Address</label>
+          <input
+            id="email"
+            autocomplete="email"
+            name="email"
+            required
+            type="text"
+          />
+        </fieldset>
+        <fieldset class="signup-user-form-area">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            minlength="6"
+            name="password"
+            required
+            type="password"
+          />
+        </fieldset>
+        <input id="submit-button" disabled type="submit" value="Sign in ⛳" />
+      </form>
+    </section>
+    <script src="/js/sign-in-script.js" type="module"></script>
+  </body>
+</html>
