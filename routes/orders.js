@@ -79,6 +79,7 @@ router.post("/new-order", allowed, async (req, res, next) => {
 
     newDoc.buyer = userID;
     newDoc.date = req.body.orderDate;
+    newDoc.rides = req.body.ride;
     newDoc.total = parseFloat(req.body.total);
     const orderDate = new Date(req.body.orderDate);
     const today = new Date();

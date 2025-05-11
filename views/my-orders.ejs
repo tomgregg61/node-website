@@ -2,22 +2,84 @@
 <html>
   <head>
     <title>My Orders</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+      h2 {
+        background-color: #2c3e50;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        margin: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background-color: #ecf0f1;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      li a {
+        text-decoration: none;
+        color: #3498db;
+        font-weight: bold;
+      }
+      li a:hover {
+        text-decoration: underline;
+      }
+      .no-orders {
+        text-align: center;
+        color: #7f8c8d;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #27ae60;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .btn:hover {
+        background-color: #2ecc71;
+      }
+    </style>
   </head>
   <body>
     <h2>My Orders</h2>
-    <% if (orders.length > 0) { %>
-    <ul>
-      <% orders.forEach(order => { %>
-      <li>
-        Order ID: <%= order._id %> - Date: <%= order.date %> - Total: £<%=
-        order.total %>
-        <a href="/orders/<%= order._id %>">View</a>
-      </li>
-      <% }) %>
-    </ul>
-    <% } else { %>
-    <p>You have no orders.</p>
-    <% } %>
-    <a href="/orders/new-order">Place a new order</a>
+    <div class="container">
+      <% if (orders.length > 0) { %>
+      <ul>
+        <% orders.forEach(order => { %>
+        <li>
+          Order ID: <%= order._id %> - Date: <%= order.date %> - Rides: <%=
+          order.rides %> - Total: £<%= order.total %>
+          <a href="/orders/<%= order._id %>">View</a>
+        </li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p class="no-orders">You have no orders.</p>
+      <% } %>
+      <a href="/orders/new-order" class="btn">Place a new order</a>
+    </div>
   </body>
 </html>

@@ -2,13 +2,71 @@
 <html>
   <head>
     <title>Order Confirmed</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+      }
+      h2 {
+        color: #2c3e50;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.1rem;
+        color: #34495e;
+        margin: 10px 0;
+      }
+      a {
+        text-decoration: none;
+        color: #3498db;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        display: inline-block;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .btn {
+        background-color: #2ecc71;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 20px;
+        display: inline-block;
+      }
+      .btn:hover {
+        background-color: #27ae60;
+      }
+    </style>
   </head>
   <body>
-    <h2>Order Confirmed!</h2>
-    <p>Thank you for your purchase.</p>
-    <p>Order ID: <%= order._id %></p>
-    <p>Date: <%= order.date %></p>
-    <p>Total: £<%= order.total %></p>
-    <a href="/orders/my-orders">View My Orders</a>
+    <div class="container">
+      <h2>Order Confirmed!</h2>
+      <p>Thank you for your purchase.</p>
+      <p><strong>Order ID:</strong> <%= order._id %></p>
+      <p><strong>Date:</strong> <%= order.date %></p>
+      <p><strong>Rides:</strong> <%= order.rides %></p>
+      <p><strong>Total:</strong> £<%= order.total %></p>
+      <a href="/orders/my-orders" class="btn">View My Orders</a>
+    </div>
   </body>
 </html>

@@ -4,24 +4,47 @@
     <title>View Order</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-      }
-      .order-details {
-        border: 1px solid #ddd;
-        padding: 15px;
-        border-radius: 8px;
-        max-width: 400px;
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
       }
       h2 {
-        color: #333;
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+      }
+      .order-details {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
       }
       p {
-        margin: 5px 0;
+        font-size: 1.1rem;
+        color: #34495e;
+        margin: 10px 0;
+      }
+      strong {
+        color: #27ae60;
       }
       a {
-        color: #007bff;
+        display: inline-block;
+        margin-top: 20px;
+        color: #3498db;
+        font-size: 1.1rem;
         text-decoration: none;
+        margin-left: 100px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd;
       }
       a:hover {
         text-decoration: underline;
@@ -33,6 +56,7 @@
     <div class="order-details">
       <p><strong>Order ID:</strong> <%= order._id %></p>
       <p><strong>Date:</strong> <%= order.date %></p>
+      <p><strong>Rides:</strong> <%= order.rides %></p>
       <p><strong>Total:</strong> £<%= order.total %></p>
       <p><strong>Buyer ID:</strong> <%= order.buyer %></p>
     </div>
