@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-right">
+          <a href="/users/sign-in" class="btn">Sign In</a>
+          <a href="/users/sign-up" class="btn">Sign Up</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Welcome to Our Website</h1>
+      <p>Explore our content and features!</p>
+      <% for (let i = 0; i < rides.length; ++i) { %>
+      <section>
+        <form action="/orders/new-order" method="POST">
+          <label for="<%= rides[i].name %>">
+            <h3><%= rides[i].name %></h3>
+            <p>
+              Fast Track Price: <%=
+              Number(rides[i].fastTrackPrice).toLocaleString("en", { style:
+              'currency', currency: 'GBP' }) %>
+            </p>
+          </label>
+          <input type="hidden" name="ride" value="<%= rides[i].name %>" />
+        </form>
+      </section>
+      <% } %>
+    </main>
+  </body>
+</html>

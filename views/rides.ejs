@@ -1,0 +1,15 @@
+<% for (let i = 0; i < rides.length; ++i) { %>
+<section>
+  <form action="/orders/new-order" method="POST">
+    <label for="<%= rides[i].name %>">
+      <h3><%= rides[i].name %></h3>
+      <p>
+        <%= Number(rides[i].fastTrackPrice).toLocaleString("en", { style:
+        'currency', currency: 'GBP' }) %>
+      </p>
+    </label>
+    <input type="hidden" name="ride" value="<%= rides[i].name %>" />
+    <input class="order-submit" type="submit" value="Book" />
+  </form>
+</section>
+<% } %>
